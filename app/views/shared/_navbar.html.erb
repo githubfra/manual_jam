@@ -20,8 +20,7 @@
           <ul class="dropdown-menu">
           <% if logged? %>
             <li><%=link_to 'Create PicStory', new_story_path %></li>
-            <li><%=link_to 'My PicStories', stories_path %></li>
-            <%# actualizar ruta a My Profile %>
+            <li><%=link_to 'My PicStories', my_stories_path %></li>
             <li><%= link_to 'My Profile', root_path%></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Cerrar sesión", sessions_destroy_path, method: :delete %></li>
