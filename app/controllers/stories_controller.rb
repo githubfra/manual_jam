@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
@@ -23,8 +25,9 @@ class StoriesController < ApplicationController
 
   # POST /stories
   # POST /stories.json
-  def create
+  def create 
     @story = Story.new(story_params)
+    @story.user_id = current_user.id
 
     respond_to do |format|
       if @story.save
